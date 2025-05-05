@@ -1,59 +1,33 @@
-# Habtrack
+Мизамбеков Асанали
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+Проект Hobby Tracker .aka To-Do List
 
-## Development server
+Веб-приложение которое помогает пользователям формировать полезные привычки, отслеживать прогресс и сохранять мотивацию. Простая и полезная вещь для повседневной жизни 💪
 
-To start a local development server, run:
+## Запуск проекта:
+Перейдите по ссылке: https://aaaasanali.github.io/habtrack/
 
-```bash
-ng serve
-```
+## Установка проекта:
+1) Скачайте .zip с репозитория: https://github.com/Aaaasanali/habtrack
+2) Распакойте проект в удобную папку
+3) Зайдите в папку через cmd терминал и установите npm: npm install
+4) Зайдите в папку habtracker: cd habtracker
+5) Запустите локальный сервер проекта: ng serve
+6) Перейдите по ссылке с результата (обычно http://localhost:4200)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Описание процесса проектирования и разработки
+В начале использовал самый обычный html, css и ts конструирование. Накалякал дизайн в Canva и верстал. Ушло на это очень много времени. Затем от друга узнал про Material Modules, открыл для себя удобство и комфорт. Полностью переделал сайт, однако дедлайн уже поджимал, поэтоу остальных ИИ фишек выполнить не успел(. Изучал Mat Modules по мере создания проекта. В этом мне помог StackOverFlow, YouTube, Angular, ну и, конечно же, Chat GPT. Поэтому теперь, я могу с уверенностью сказать что являюсь продвинутым пользователем этих библиотек.Проект очень понравился: простой, расслабляющий. Единственный недостаток - дедлайн. Пусть это и небольшой проект, но, так как он вступительный я не успел показать всех своих возможностей и с доказать, что именно меня стоит принять в nFactorial. 
 
-## Code scaffolding
+## Описание известных ошибок или проблем в приложении
+Когда мы занимаем одну дату в календаре несколькими тасками, деплоиднутый проект не выдает множество тасков на этой дате. А тем временем, точно тот же проект, запущенный на локальном хосте, исправно выдает результат (показал в видео). В консоли выходит ошибка:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+##
+Blocked aria-hidden on an element because its descendant retained focus. The focus must not be hidden from assistive technology users. Avoid using aria-hidden on a focused element or its ancestor. Consider using the inert attribute instead, which will also prevent focus. For more details, see the aria-hidden section of the WAI-ARIA specification at https://w3c.github.io/aria/#aria-hidden.
+Element with focus: button
+##
 
-```bash
-ng generate component component-name
-```
+Как исправить - не знаю. Буду надеятся, что менторы на nFactorial меня просветят, когда я обращусь по этой проблеме.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Объясните почему выбрали этот технический стэк.
+Стэк был выбран исходя из доступных знаний: 
+Студенты ИС на 2 курсе, осеннего семестра проходят курс Веб Разработки, на котором преподают стэк Django+Angular. Я много работал на них и я комфортно чувствую себя в них
