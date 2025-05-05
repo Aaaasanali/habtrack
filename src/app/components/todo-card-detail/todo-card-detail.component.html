@@ -1,0 +1,42 @@
+<div *ngFor="let todo of todos" >
+    <mat-card class="todo_card todo_card_completed" *ngIf="todo?.completed">
+        <mat-card-header>
+            <mat-card-title class="todo_card_title">
+                {{ todo.title }}
+            </mat-card-title>
+            <mat-card-subtitle class="todo_card_subtitle">
+                {{ todo.description }}
+            </mat-card-subtitle>
+
+            <div class="todo_card_dates">
+                <mat-card-subtitle class="todo_card_subtitle" >
+                    Assigned At: {{ todo.creationDate | date: 'dd.MM.yyyy' }}
+                </mat-card-subtitle>
+                <mat-card-subtitle class="todo_card_subtitle" >
+                    Completed At: {{ todo.completionDate | date: 'dd.MM.yyyy' }}
+                </mat-card-subtitle>
+            </div>
+        </mat-card-header>
+    </mat-card>
+</div>
+<div *ngFor="let todo of todos" >
+<mat-card class="todo_card todo_card_in_progress" *ngIf="!todo?.completed">
+    <mat-card-header>
+        <mat-card-title class="todo_card_title">
+            {{ todo.title }}
+        </mat-card-title>
+        <mat-card-subtitle class="todo_card_subtitle">
+            {{ todo.description }}
+        </mat-card-subtitle>
+
+        <div class="todo_card_dates">
+            <mat-card-subtitle class="todo_card_subtitle" >
+                Assigned At: {{ todo.creationDate | date: 'dd.MM.yyyy' }}
+            </mat-card-subtitle>
+            <mat-card-subtitle class="todo_card_subtitle" >
+                Expected to be Complete At: {{ todo.expectedCompletionDate | date: 'dd.MM.yyyy' }}
+            </mat-card-subtitle>
+        </div>
+    </mat-card-header>
+</mat-card>
+</div>

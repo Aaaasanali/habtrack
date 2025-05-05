@@ -1,0 +1,59 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: blueviolet;
+    color: white;
+
+    height: 14%;
+
+    border-radius: 0px 0px 20px 20px;
+}
+
+.task_progress_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 27%;
+
+    position: relative;
+}
+.progress_subtitle{
+    margin: 10px 0px;
+}
+.progress_bar_container{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+p{
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 157px;
+}
+::ng-deep .mdc-linear-progress__buffer {
+    height: var(--mdc-linear-progress-track-height, 20px) !important;
+}
+::ng-deep .mdc-linear-progress__primary-bar{
+    height: var(--mdc-linear-progress-bar-height, 20px) !important;
+}
+::ng-deep .mdc-linear-progress__bar-inner{
+    border-top-width: var(--mdc-linear-progress-bar-height, 20px) !important;
+}
+mat-progress-bar {
+    width: 200px;
+    height: 20px !important;
+}
+
+.task-stats {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+}

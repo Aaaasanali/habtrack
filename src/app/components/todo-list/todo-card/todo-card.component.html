@@ -1,0 +1,77 @@
+<body>
+<mat-tab-group color="accent" *ngIf="todosList.length > 0; else withoutTodos">
+    <mat-tab label="In Progress">
+        <div *ngFor="let todo of todosList">
+            <mat-card class="todo_card" *ngIf="!todo?.completed">
+                <mat-card-header>
+                    <mat-card-title class="todo_card_title">
+                        {{ todo?.title }}
+                    </mat-card-title>
+                    <mat-card-subtitle class="todo_card_subtitle">
+                        {{ todo?.description }}
+                    </mat-card-subtitle>
+                    <mat-card-subtitle class="todo_card_subtitle" *ngIf="todo?.expectedCompletionDate && isDateClose(todo.expectedCompletionDate)" style="color: rgb(255, 12, 12);">
+                        Due: {{ todo?.expectedCompletionDate | date: 'dd.MM.yyyy' }}
+                    </mat-card-subtitle>
+                    <mat-card-subtitle class="todo_card_subtitle" *ngIf="todo?.expectedCompletionDate &&  !isDateClose(todo.expectedCompletionDate)" >
+                        Due: {{ todo?.expectedCompletionDate | date: 'dd.MM.yyyy' }}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-actions align="end" class="todo_card_actions">
+                    <button class="header_btn check-btn" mat-icon-button aria-label="Complete Task"
+                        (click)="completeToDo(todo)">
+                        <mat-icon>check_circle</mat-icon>
+                    </button>
+                    <button class="header_btn check-btn todo_form_edit_btn" mat-icon-button aria-label="Edit Task"
+                        (click)="openDialogEdit(todo)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button class="header_btn check-btn todo_form_delete_btn" mat-icon-button aria-label="Delete Task"
+                        (click)="deleteToDo(todo)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Completed">
+        <div *ngFor="let todo of todosList">
+            <mat-card class="todo_card" *ngIf="todo?.completed">
+                <mat-card-header>
+                    <mat-card-title class="todo_card_title">
+                        {{ todo?.title }}
+                    </mat-card-title>
+                    <mat-card-subtitle class="todo_card_subtitle">
+                        {{ todo?.description }}
+                    </mat-card-subtitle>
+                    <mat-card-subtitle class="todo_card_subtitle" >
+                        Completed At: {{ todo?.completionDate | date: 'dd.MM.yyyy' }}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                
+                <mat-card-actions align="end">
+                    <button class="header_btn restore-btn" mat-icon-button aria-label="Restore Task"
+                        (click)="uncompleteToDo(todo)">
+                        <mat-icon>restore</mat-icon>
+                    </button>
+                    <button class="header_btn check-btn todo_form_delete_btn" mat-icon-button aria-label="Delete Task"
+                        (click)="deleteToDo(todo)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </mat-tab>
+
+    <mat-tab label="Calendar">
+        <div class="calendar-container">
+            <mat-calendar [dateClass]="dateClass" (selectedChange)="openDialog($event || undefined)"></mat-calendar>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+<ng-template #withoutTodos>
+    <h3 class="warn_message">No tasks here yet..</h3>
+</ng-template>
+</body>

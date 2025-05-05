@@ -1,0 +1,30 @@
+
+<form [formGroup]="todoForm" (submit)="submitForm()">
+    <section class="todo_form_card">
+        <h1 class="todo_form_title">Edit Task</h1>
+
+        <mat-form-field color="warn" appearance="outline" class="todo_form_input">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" placeholder="Enter title" style="color: black;" value="{{todo?.title}}"/>
+        </mat-form-field>
+
+        <mat-form-field color="accent" appearance="outline" class="todo_form_input">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description" placeholder="Enter description" style="color: black;" value="{{todo?.description}}"></textarea>
+        </mat-form-field>
+
+        <mat-form-field color="accent" appearance="outline" class="todo_form_input">
+            <mat-label>Expected Completion</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="expectedCompletionDate" style="color: black;" value="{{todo?.expectedCompletionDate}}">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <div class="todo_form_actions">
+        <button mat-raised-button class="todo_form_sucess_btn" type="submit" >
+            Edit
+        </button>
+        <button mat-raised-button color="warn" type="button" (click)="closeDialog()">Cancel</button>
+        </div>
+    </section>
+</form>

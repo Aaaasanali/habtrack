@@ -1,0 +1,14 @@
+<header class="header">
+    <h1 class="header_title">Habtrack</h1>
+    <div class="task_progress_container">
+        <div class="progress_bar_container">
+            <h2 class="progress_subtitle">Tasks Progress</h2>
+            
+            <mat-progress-bar class="progress_bar" mode="determinate" [value]="completionPercentage"></mat-progress-bar>
+        </div>
+            <p>{{completionPercentage}}%</p>
+    </div>
+    <button mat-icon-button class="header_btn" aria-label="Add new task" (click)="newCardDialog()">
+        <mat-icon>add</mat-icon>
+    </button>
+</header>

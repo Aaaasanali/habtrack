@@ -1,0 +1,51 @@
+.todo_card {
+    width: 90%;
+    height: auto;
+    margin: 1rem auto;
+    border-radius: 1.8rem !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    color: black !important;
+}
+
+.todo_card.todo_card_completed{
+    background-color: #00ff11;
+}
+.todo_card.todo_card_in_progress{
+    background-color: #ffcc00;
+}
+
+.todo_card_title {
+    font-size: 25px !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.todo_card_subtitle {
+    margin-top: 2rem !important;
+    font-size: 18px !important;
+    padding: 20px 0px;
+    color: black !important;
+}
+
+.task-title {
+    font-size: 12px;
+    color: #4caf50;
+    /* Green color for task titles */
+    text-align: center;
+    margin-top: 2px;
+}
+
+mat-card-header{
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+}
+
+.todo_card_dates{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
